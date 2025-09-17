@@ -3,6 +3,7 @@ import { BuildOptions } from "./types/config";
 import { buildPlugins } from "./buildPlugins";
 import { buildLoaders } from "./buildLoaders";
 import { buildResolvers } from "./buildResolvers";
+import { buildDevServer } from "./buildDevServer";
 
 
 export function buildWebpackConfig(options: BuildOptions): Configuration {
@@ -21,10 +22,7 @@ export function buildWebpackConfig(options: BuildOptions): Configuration {
       rules: buildLoaders()
     },
     resolve: buildResolvers(),
-    ignoreWarnings: [
-      {
-        module: /node_modules\/@types\/node/,
-      },
-    ]
+    devtool: 'inline-source-map',
+    devServer: buildDevServer(options)
   }
 }
