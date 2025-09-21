@@ -7,7 +7,7 @@ import { buildDevServer } from "./buildDevServer";
 
 
 export function buildWebpackConfig(options: BuildOptions): Configuration {
-  const {mode, paths} = options
+  const {mode, paths, isDev} = options
 
   return {
     mode,
@@ -22,7 +22,7 @@ export function buildWebpackConfig(options: BuildOptions): Configuration {
       rules: buildLoaders()
     },
     resolve: buildResolvers(),
-    devtool: 'inline-source-map',
-    devServer: buildDevServer(options)
+    devtool: isDev ? 'inline-source-map' : undefined,
+    devServer: isDev ? buildDevServer(options) : undefined
   }
 }

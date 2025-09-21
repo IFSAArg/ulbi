@@ -2,4 +2,4 @@ import { someFn } from "./test";
 
 someFn(123)
 
-document.body.innerHTML = '<div style="font-size: 72px"">Опа, нормас слушайfffff</div>'
+document.body.innerHTML = '<div style="font-size: 72px"">Опа, нормас слушай</div>'
