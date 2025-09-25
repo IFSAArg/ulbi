@@ -1,1 +1,0 @@
-(()=>{"use strict";console.log("IT's WORKING321321321321"),document.body.innerHTML='<div style="font-size: 72px"">Опа, нормас слушай</div>'})();
