@@ -1,6 +1,9 @@
 # Зависимости
 node_modules/
 
+#билд
+/build
+
 # Логи
 npm-debug.log*
 yarn-debug.log*
