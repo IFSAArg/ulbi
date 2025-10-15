@@ -18,6 +18,6 @@ export const useTheme = ():IUseThemeResult => {
 
   return {
     toggleTheme,
-    theme: theme
+    theme,
   }
 }
