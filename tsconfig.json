@@ -7,7 +7,10 @@
     "jsx": "react-jsx",
     "allowJs": true,
     "moduleResolution": "node",
-    "baseUrl": ".",
+    "baseUrl": ".", //Для абсолютного импорта
+    "paths": { // Указывает, что все пути идут из папки src
+      "*": ["./src/*"]
+    },
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true
   },
