@@ -5,7 +5,6 @@ import { buildLoaders } from "./buildLoaders";
 import { buildResolvers } from "./buildResolvers";
 import { buildDevServer } from "./buildDevServer";
 
-
 export function buildWebpackConfig(options: BuildOptions): Configuration {
   const {mode, paths, isDev} = options
 
@@ -17,7 +16,7 @@ export function buildWebpackConfig(options: BuildOptions): Configuration {
       path: paths.build,
       clean: true,
     },
-    plugins: buildPlugins(paths),
+    plugins: buildPlugins(options),
     module: {
       rules: buildLoaders(options)
     },
