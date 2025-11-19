@@ -1,12 +1,29 @@
-name: GitHub Actions Demo
-on: [push]
+name: linting, testing, building
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 jobs:
-  Explore-Github-Actions:
+  pipeline:
     runs-on: windows-2019
+    strategy:
+      matrix:
+        node-version: [ 17.x ]
+
     steps:
-      - run: echo "blablablabla"
-      - run: echo "b123213123"
-      - run: echo "blab4215r43"
-      - run: echo "bl4324325ablabla"
-      - run: echo "blablablabla"
-      - run: echo "blabl98707la"
+      - uses: actions/checkout@v2
+      - name: Starting Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: install modules
+        run: npm ci
+      - name: build production project
+        run: npm run build:prod
+      - name: linting typescript
+        run: npm run lint:ts
+      - name: linting css
+        run: npm run lint:scss
+      - name: unit testing
+        run: npm run test:unit
