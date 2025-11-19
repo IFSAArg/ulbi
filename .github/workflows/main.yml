@@ -1,0 +1,12 @@
+name: GitHub Actions Demo
+on: [push]
+jobs:
+  Explore-Github-Actions:
+    runs-on: windows-2019
+    steps:
+      - run: echo "blablablabla"
+      - run: echo "b123213123"
+      - run: echo "blab4215r43"
+      - run: echo "bl4324325ablabla"
+      - run: echo "blablablabla"
+      - run: echo "blabl98707la"
