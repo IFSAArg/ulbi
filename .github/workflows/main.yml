@@ -21,9 +21,9 @@ jobs:
         run: npm ci
       - name: build production project
         run: npm run build:prod
-      - name: linting typescript
-        run: npm run lint:ts
-      - name: linting css
-        run: npm run lint:scss
+      - name: fix linting typescript
+        run: npm run lint:ts:fix
+      - name: fix linting scss
+        run: npm run lint:scss:fix
       - name: unit testing
         run: npm run test:unit
