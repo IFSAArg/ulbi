@@ -3,6 +3,7 @@ node_modules/
 
 #билд
 /build
+/storybook-static
 
 # Логи
 npm-debug.log*
