@@ -1,6 +1,5 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { BugButton } from 'app/providers/ErrorBoundary/ui/BugButton';
 import cls from './PageError.module.scss';
 
   interface PageErrorProps {
