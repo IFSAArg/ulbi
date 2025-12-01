@@ -1,0 +1,39 @@
+name: linting, testing, building
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+jobs:
+  pipeline:
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        node-version: [ 17.x ]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Starting Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: install modules
+        run: npm ci
+      - name: build production project
+        if: always()
+        run: npm run build:prod
+      - name: fix linting typescript
+        if: always()
+        run: npm run lint:ts:fix
+      - name: fix linting scss
+        if: always()
+        run: npm run lint:scss:fix
+      - name: unit testing
+        if: always()
+        run: npm run test:unit
+      - name: build storybook
+        if: always()
+        run: npm run storybook:build
+      - name: screenshot testing
+        if: always()
+        run: npm run test:ui:ci
