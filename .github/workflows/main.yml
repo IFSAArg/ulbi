@@ -20,14 +20,20 @@ jobs:
       - name: install modules
         run: npm ci
       - name: build production project
+        if: always()
         run: npm run build:prod
       - name: fix linting typescript
+        if: always()
         run: npm run lint:ts:fix
       - name: fix linting scss
+        if: always()
         run: npm run lint:scss:fix
       - name: unit testing
+        if: always()
         run: npm run test:unit
       - name: build storybook
+        if: always()
         run: npm run storybook:build
       - name: screenshot testing
+        if: always()
         run: npm run test:ui:ci

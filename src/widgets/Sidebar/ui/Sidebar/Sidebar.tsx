@@ -16,7 +16,7 @@ interface SidebarProps {
 
 export const Sidebar = ({ className }: SidebarProps) => {
   const [collapsed, setCollapsed] = useState(false);
-  const { t } = useTranslation();
+  const { t } = useTranslation('sidebar');
 
   const toggleCollapse = () => {
     setCollapsed(!collapsed);
@@ -48,7 +48,9 @@ export const Sidebar = ({ className }: SidebarProps) => {
           theme={AppLinkTheme.PRIMARY}
         >
           <MainIcon className={cls.icon} />
-          <span className={cls.item}>{t('Главная страница')}</span>
+          <span className={cls.item}>
+            {t('Главная страница')}
+          </span>
         </AppLink>
       </div>
       <div className={cls.switchers}>
