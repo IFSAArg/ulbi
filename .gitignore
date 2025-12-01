@@ -5,6 +5,10 @@ node_modules/
 /build
 /storybook-static
 
+#тесты
+.loki/report.json
+.loki/report.html
+
 # Логи
 npm-debug.log*
 yarn-debug.log*
