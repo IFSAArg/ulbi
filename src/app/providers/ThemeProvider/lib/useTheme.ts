@@ -10,7 +10,7 @@ export const useTheme = ():IUseThemeResult => {
   const { theme, setTheme } = useContext(ThemeContext);
 
   const toggleTheme = () => {
-    const newTheme = theme === 'dark' ? Theme.LIGHT : Theme.DARK;
+    const newTheme = theme === 'app_dark_theme' ? Theme.LIGHT : Theme.DARK;
 
     setTheme(newTheme);
     localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
